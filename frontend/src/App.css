@@ -2,32 +2,28 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-key-img {
+.key-img {
   height: 34px;
   width: 34px;
 }
 
-.App-header {
+.header {
   background-color: #222;
-  height: 50px;
+  height: 80px;
   padding: 20px;
   color: white;
 }
 
-.App-title {
+.title {
   font-size: 1.5em;
 }
 
-.App-display {
+.display {
   font-size: large;
+  height: 20px;
 }
 
-.App-square {
+.square {
   background: #fff;
   border: 1px solid #999;
   font-size: 14px;
@@ -39,46 +35,55 @@
   padding: 0;
   text-align: center;
   width: 40px;
-  float: left;
+
 }
 
-.App-transparent-square {
-  background: #fff;
-  border: 1px solid #999;
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 40px;
-  height: 40px;
-  margin-right: -1px;
-  margin-top: -1px;
-  padding: 0;
-  text-align: center;
-  width: 40px;
-}
-
-.App-square:focus {
+.square:focus {
   outline: none;
 }
 
-.App-board-row:after {
+.board-row {
+  margin: auto;
   clear: both;
-  content: "";atom
+  content: "";
   display: table;
 }
 
-.App-file-upload {
+.file-upload {
   margin: 0 auto;
   display: block;
-  height: 300px;
-  width: 300px;
+  height: 350px;
   border: 1px dashed #999;
 }
 
-.App-uploaded-img {
-  width: 600px;
+.uploaded-img {
+  margin: 0 auto;
+  width: 100%;
+  height: 350px;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.keyboard:center {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.double {
+  margin: 0 auto;
+  float: left;
+}
+
+.outer-col {
+  background-color: #D3D3D3;
+}
+
+#image-map {
+  width: 100%;
+  height: 300px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.leaflet-container {
+    height: 400px;
+    width: 100%;
 }

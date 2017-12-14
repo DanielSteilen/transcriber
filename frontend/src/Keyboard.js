@@ -1,10 +1,11 @@
 import React from 'react';
+import './App.css';
 
 function Key(props) {
   return (
-    <button className="App-square" onClick={props.onClick}>
+    <button className="square" onClick={props.onClick}>
       <img
-        className="App-key-img"
+        className="key-img"
         alt={props.value}
         src={require("" + props.image)}
       />
@@ -14,7 +15,7 @@ function Key(props) {
 
 function SpecialKey(props) {
   return (
-    <button className="App-square" onClick={props.onClick}>
+    <button className="square" onClick={props.onClick}>
     {props.value}
     </button>
   )
@@ -23,7 +24,7 @@ function SpecialKey(props) {
 export default class Keyboard extends React.Component {
   renderKey(char, imagePath) {
     return (
-      <Key className="square"
+      <Key
         value={char}
         onClick={() => this.props.onStandardClick(char)}
         image={imagePath}
@@ -33,7 +34,7 @@ export default class Keyboard extends React.Component {
 
   renderDoubleKey(char) {
     return (
-      <div>
+      <div className="double">
         {this.renderKey(char.toUpperCase(), "./images/kurrent/" + char + "_upper.jpg")}
         {this.renderKey(char, "./images/kurrent/" + char + "_lower.jpg")}
       </div>
@@ -51,8 +52,8 @@ export default class Keyboard extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="App-board-row">
+      <div className="keyboard">
+        <div className="board-row">
         {this.renderDoubleKey('a')}
         {this.renderDoubleKey('b')}
         {this.renderDoubleKey('c')}
@@ -60,7 +61,7 @@ export default class Keyboard extends React.Component {
         {this.renderDoubleKey('e')}
         {this.renderDoubleKey('f')}
         </div>
-        <div className="App-board-row">
+        <div className="board-row">
         {this.renderDoubleKey('g')}
         {this.renderDoubleKey('h')}
         {this.renderDoubleKey('i')}
@@ -68,7 +69,7 @@ export default class Keyboard extends React.Component {
         {this.renderDoubleKey('k')}
         {this.renderDoubleKey('l')}
         </div>
-        <div className="App-board-row">
+        <div className="board-row">
         {this.renderDoubleKey('m')}
         {this.renderDoubleKey('n')}
         {this.renderDoubleKey('o')}
@@ -76,7 +77,7 @@ export default class Keyboard extends React.Component {
         {this.renderDoubleKey('q')}
         {this.renderDoubleKey('r')}
         </div>
-        <div className="App-board-row">
+        <div className="board-row">
         {this.renderDoubleKey('s')}
         {this.renderDoubleKey('t')}
         {this.renderDoubleKey('u')}
@@ -84,11 +85,9 @@ export default class Keyboard extends React.Component {
         {this.renderDoubleKey('w')}
         {this.renderDoubleKey('x')}
         </div>
-        <div className="App-board-row">
+        <div className="board-row">
         {this.renderDoubleKey('y')}
         {this.renderDoubleKey('z')}
-        </div>
-        <div className="App-board-row">
         {this.renderSpecialKey('clear', () => this.props.onClearClick())}
         {this.renderSpecialKey('back', () => this.props.onBackspaceClick())}
         {this.renderSpecialKey('_', () => this.props.onStandardClick(' '))}
@@ -97,7 +96,3 @@ export default class Keyboard extends React.Component {
     );
   }
 }
-
-// {this.renderClearKey('clear')}
-// {this.renderBackspaceKey('back')}
-// {this.renderSpaceKey('_')}

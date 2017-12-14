@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 import './App.css';
 import Doc from './Document';
 import Keyboard from'./Keyboard';
-
+import {Row, Col} from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap-theme.css';
 
 
 
@@ -33,22 +35,34 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Transcriber</h1>
-        </header>
-        <Doc/>
-        <p className="App-display">
-          {this.state.text}
-        </p>
-        <Keyboard
-          onStandardClick={(letter) => this.handleStandard(letter)}
-          onClearClick={() => this.handleClear()}
-          onBackspaceClick={() => this.handleBackspace()}
-        />
-      </div>
+      <Row>
+          <header className="header">
+            <h1 className="title">Transcriber</h1>
+          </header>
+      </Row>
+      <Row>
+      <Col className="outer-col" md={4} >
+        <p>Col1</p>
+      </Col>
+        <Col md={4}>
+          <Doc/>
+        </Col>
+        <Col className="outer-col" md={4} >
+          <p>Col3</p>
+        </Col>
+      </Row>
+          <p className="display">
+            {this.state.text}
+          </p>
+          <Keyboard
+            onStandardClick={(letter) => this.handleStandard(letter)}
+            onClearClick={() => this.handleClear()}
+            onBackspaceClick={() => this.handleBackspace()}
+          />
+        </div>
     );
   }
 }
 
 export default App;
-//<img src={logo} className="App-logo" alt="logo" />
+//<img src={logo} className="logo" alt="logo" />
